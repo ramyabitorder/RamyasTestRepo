@@ -1,0 +1,7 @@
+:host {
+    --slds-c-card-body-spacing-inlinestart: 20px;
+    --sds-c-card-color-background:#FBEAEB;
+}
+.cellcolor{
+    background-color:azure;
+  }

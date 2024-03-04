@@ -1,0 +1,15 @@
+.THIS {
+}
+.THIS.slds-p-around_xx-large{
+    background-color:#FBEAEB;
+}
+.THIS .customtable{
+    color:#641909;
+    width:fit-content;
+}
+.THIS .slds-table th{
+    background-color: azure;
+}
+.THIS .slds-table td{
+    background-color: azure;
+}

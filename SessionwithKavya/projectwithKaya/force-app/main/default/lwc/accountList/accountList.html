@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title = "Account List using LWC" icon-name="standard:account" style="color: rgb(62, 4, 4); background-color:#FBEAEB;">
+        <div class =" slds-text-align_center slds-p-left_medium ">
+        <lightning-button variant="brand" label="Create New Account" title="New" onclick={NewAccount}></lightning-button>
+    </div>
+    <div class = "slds-m-around_large myTable">
+        <lightning-datatable columns={columns} data={accounts} key-field="Id" hide-checkbox-column="true" style="background-color: #FBEAEB;"></lightning-datatable>
+    </div>
+        <template if:true={isCreateAccount}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                   <header class="slds-modal__header">
+                      <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closePopup}>
+                         <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                         <span class="slds-assistive-text">Close</span>
+                      </button>
+                      <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create an Account</h2>
+                   </header>
+                   <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-record-edit-form object-api-name="Account" onsuccess={handleSuccess}>
+                        <lightning-input-field field-name="Name"> </lightning-input-field>
+                        <lightning-input-field field-name="Need_Contact__c"> </lightning-input-field>
+                        <lightning-button
+                        class="slds-var-m-top_small slds-var-m-left_small"
+                        type="submit"
+                        label="Save">
+                    </lightning-button>
+                </lightning-record-edit-form>
+                   </div>
+                   </div>
+                   </section>
+                   <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    </lightning-card>
+</template>
